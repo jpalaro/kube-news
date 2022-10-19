@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: palaro/kube-news:v1
+          ports:
+          - containerPort: 8080
+          env:
+          - name: "DB_PASSWORD"
+            value: "Pg#123"
+          - name: "DB_USERNAME"
+            value: "kubedevnews"
+          - name: "DB_DATABASE"
+            value: "kubedevnews"
+          - name: "DB_HOST"
+            value: "web"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 30000
+  type: NodePort
