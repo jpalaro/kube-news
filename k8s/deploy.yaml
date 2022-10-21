@@ -18,11 +18,12 @@ spec:
           - containerPort: 5432
           env:
           - name: "POSTGRES_PASSWORD"
-            value: "u823hd7823hsn910r"
-          - name: "POSTGRES_DATABASE"
+            value: "senha.123"
+          - name: "POSTGRES_DB"
             value: "kubenews"
-          - name: "POSTGRES_USERNAME"
+          - name: "POSTGRES_USER"
             value: "kubenews"
+
 ---
 apiVersion: v1
 kind: Service
@@ -34,6 +35,7 @@ spec:
   ports:
     - port: 5432
   type: ClusterIP
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -60,13 +62,14 @@ spec:
           - containerPort: 8080
           env:
           - name: "DB_PASSWORD"
-            value: "u823hd7823hsn910r"
+            value: "senha.123"
           - name: "DB_USERNAME"
             value: "kubenews"
           - name: "DB_DATABASE"
             value: "kubenews"
           - name: "DB_HOST"
             value: "postgre"
+
 ---
 apiVersion: v1
 kind: Service
