@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: palaro/kube-news:8
+          image: palaro/kube-news:{{TAG}}
           ports:
           - containerPort: 8080
           env:
