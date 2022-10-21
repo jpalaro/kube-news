@@ -11,10 +11,14 @@ spec:
     metadata:
       labels:
         app: web
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
     spec:
       containers:
         - name: web
-          image: palaro/kube-news:{{TAG}}
+          image: palaro/kube-news:8
           ports:
           - containerPort: 8080
           env:
