@@ -10,19 +10,19 @@ spec:
     metadata:
       labels:
         app: postgre
-      spec:
-        containers:
-          - name: postgres
-            image: postgres:15.0
-            ports:
-            - containerPort: 5432
-            env:
-            - name: "POSTGRES_PASSWORD"
-              value: "Pg#123"
-            - name: "POSTGRES_DATABASE"
-              value: "kubenews"
-            - name: "POSTGRES_USERNAME"
-              value: "kubenews"
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15.0
+          ports:
+          - containerPort: 5432
+          env:
+          - name: "POSTGRES_PASSWORD"
+            value: "Pg#123"
+          - name: "POSTGRES_DATABASE"
+            value: "kubenews"
+          - name: "POSTGRES_USERNAME"
+            value: "kubenews"
 ---
 apiVersion: v1
 kind: Service
