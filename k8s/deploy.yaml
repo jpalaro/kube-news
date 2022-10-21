@@ -18,7 +18,7 @@ spec:
           - containerPort: 5432
           env:
           - name: "POSTGRES_PASSWORD"
-            value: "Pg#123"
+            value: "u823hd7823hsn910r"
           - name: "POSTGRES_DATABASE"
             value: "kubenews"
           - name: "POSTGRES_USERNAME"
@@ -60,7 +60,7 @@ spec:
           - containerPort: 8080
           env:
           - name: "DB_PASSWORD"
-            value: "Pg#123"
+            value: "u823hd7823hsn910r"
           - name: "DB_USERNAME"
             value: "kubenews"
           - name: "DB_DATABASE"
